@@ -8,12 +8,17 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import { useEffect } from "react";
+import { CoffeeListing } from "./pages/CoffeeListing/CoffeeListing";
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 ];
 
 export default function App() {
+
+  useEffect(() => {}, []);
+
   return (
     <html lang="en">
       <head>
@@ -23,7 +28,7 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
+        <CoffeeListing></CoffeeListing>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
